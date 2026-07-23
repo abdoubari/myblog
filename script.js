@@ -3,18 +3,6 @@ const themeToggleBtn = document.getElementById('themeToggle');
 const newsletterForm = document.getElementById('newsletterForm');
 
 /**
- * Applies or removes the dark theme attribute.
- * @param {boolean} isDark 
- */
-function applyTheme(isDark) {
-  if (isDark) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-  }
-}
-
-/**
  * Evaluates whether current system time falls between 6 PM (18:00) and 9 PM (21:00).
  * @returns {boolean}
  */
@@ -24,14 +12,28 @@ function isTimeInSchedule() {
 }
 
 /**
+ * Applies or removes the dark theme attribute on <html>.
+ * @param {boolean} isDark 
+ */
+function applyTheme(isDark) {
+  if (isDark) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    // Setting explicit 'light' attribute in case your CSS targets [data-theme="light"]
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+}
+
+/**
  * Initializes theme setting based on stored preference or current schedule.
  */
 function initTheme() {
   const savedTheme = localStorage.getItem('theme');
 
-  if (savedTheme !== null) {
+  if (savedTheme === 'dark' || savedTheme === 'light') {
     applyTheme(savedTheme === 'dark');
   } else {
+    // If no manual preference is saved, use time schedule
     applyTheme(isTimeInSchedule());
   }
 }
@@ -47,14 +49,14 @@ if (themeToggleBtn) {
   });
 }
 
-// Event Listener: Listen for theme updates across open browser tabs
+// Listen for cross-tab theme sync
 window.addEventListener('storage', (event) => {
   if (event.key === 'theme') {
     applyTheme(event.newValue === 'dark');
   }
 });
 
-// Event Listener: Newsletter Submission
+// Newsletter Submission
 if (newsletterForm) {
   newsletterForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -63,5 +65,5 @@ if (newsletterForm) {
   });
 }
 
-// Initialize on execution
+// Run immediately
 initTheme();
