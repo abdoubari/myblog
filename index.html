@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bari Abder — البراند الشخصي والأفكار</title>
-  
+  <link rel="icon" type="image/png" href="main-logo.png">
   <!-- Cairo Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<!-- Custom Popup Notification -->
+<div id="toastPopup" class="toast-popup">
+  <div class="toast-content">
+    <span class="toast-icon">✓</span>
+    <span class="toast-message">شكراً لاشتراكك! سيصلك جديدنا على البريد.</span>
+  </div>
+  <div class="toast-progress"></div>
+</div>
   <!-- Top Navigation Bar -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="brand-logo">
+      <a href="https://bariabder.com/" class="brand-logo">
         <img src="https://www.bariabder.com/bariabder.jpg" alt="Bari Abder" class="brand-avatar">
         <span class="brand-name">Bari Abder</span>
       </a>
@@ -47,20 +54,12 @@
       </p>
       
       <div class="cta-group">
-        <a href="https://www.bariabder.com/#final-form" class="btn btn-primary">انضم للبرنامج</a>
-        <a href="https://www.bariabder.com/consultation" class="btn btn-secondary">احجز استشارة</a>
+        <a href="https://www.bariabder.com" class="btn btn-primary">انضم للبرنامج</a>
+        <a href="https://www.bariabder.com/consultation/" class="btn btn-secondary">احجز استشارة</a>
       </div>
     </section>
 
-    <!-- OTM Hero Card -->
-    <div class="banner-card">
-      <div class="banner-card-content">
-        <span class="banner-badge">البرنامج الرئيسي</span>
-        <h2 class="banner-title">نظام Organic Trust Machine (OTM)</h2>
-        <p class="banner-subtitle">احصل على منظومة كاملة لبناء ثقة مشترييك دون الحاجة لإعلانات مُموّلة.</p>
-        <a href="https://www.bariabder.com/#final-form" class="banner-link">اكتشف التفاصيل ←</a>
-      </div>
-    </div>
+   
 
     <!-- Article Directory List -->
     <section class="index-articles-section">
@@ -92,7 +91,7 @@
         <h3 class="newsletter-title">آخر منشوراتنا.</h3>
         <p class="newsletter-subtitle">مباشرة إلى بريدك الإلكتروني.</p>
         <form class="newsletter-form" id="newsletterForm">
-          <input type="email" placeholder="البريد الإلكتروني" required class="newsletter-input">
+          <input type="email" name="email" placeholder="البريد الإلكتروني" required class="newsletter-input">
           <button type="submit" class="btn-submit">اشترك ←</button>
         </form>
       </div>
@@ -103,9 +102,7 @@
   <!-- Floating Pill Footer -->
   <footer class="site-footer">
     <div class="footer-pill">
-     <a href="https://www.bariabder.com/" aria-label="Home">
-                <img src="main-logo.svg" style="width:28px;" alt="Logo">
-            </a>
+      <a href="/" aria-label="Home"><img src="main-logo.svg" style="width:28px;" alt="Logo" onerror="this.src='main-logo.png'"></a>
       <nav class="footer-pill-links">
         <a href="/privacy">سياسة الخصوصية</a>
         <a href="/terms">شروط الخدمة</a>
@@ -117,6 +114,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+<script src="script.js?v=2"></script>
+  
 </body>
 </html>
