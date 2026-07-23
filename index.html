@@ -1,12 +1,386 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Page</title>
+  <title>Bari Abder — Personal Brand & Insights</title>
+  
+  <!-- Google Cairo Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Palette */
+      --midnight: #272325;
+      --otm-purple: #5246B5;
+      --otm-purple-hover: #43389B;
+      --purple-subtle: #F3F1FA;
+      
+      /* Neutrals */
+      --bg-body: #FAFAFA;
+      --bg-card: #FFFFFF;
+      --text-muted: #6B7280;
+      --border-color: #E5E7EB;
+      
+      /* Specs */
+      --max-width: 680px;
+      --radius-lg: 20px;
+      --radius-sm: 10px;
+      --transition: all 0.2s ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--midnight);
+      line-height: 1.6;
+      padding: 40px 16px 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* --- Profile Header --- */
+    .profile-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .avatar-wrap {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(39, 35, 37, 0.05);
+    }
+
+    .avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--midnight);
+      letter-spacing: -0.02em;
+    }
+
+    .profile-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .profile-bio {
+      font-size: 0.95rem;
+      color: var(--midnight);
+      font-weight: 500;
+      max-width: 480px;
+      margin: 0 auto 20px;
+    }
+
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--otm-purple);
+      color: #FFFFFF;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--otm-purple-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: var(--midnight);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--otm-purple);
+      color: var(--otm-purple);
+    }
+
+    /* --- Hero Banner Card --- */
+    .banner-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 32px;
+      transition: var(--transition);
+    }
+
+    .banner-card:hover {
+      border-color: rgba(82, 70, 181, 0.3);
+      box-shadow: 0 12px 24px -6px rgba(39, 35, 37, 0.05);
+    }
+
+    .banner-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .banner-footer {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+    }
+
+    .banner-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--midnight);
+    }
+
+    .banner-link {
+      color: var(--otm-purple);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* --- Category Tabs --- */
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background-color: var(--purple-subtle);
+      color: var(--otm-purple);
+    }
+
+    /* --- Article List --- */
+    .articles-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .article-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .article-item:hover {
+      border-color: var(--otm-purple);
+      transform: translateX(-3px);
+    }
+
+    .article-thumb {
+      width: 80px;
+      height: 60px;
+      border-radius: 6px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .article-info {
+      flex-grow: 1;
+    }
+
+    .article-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--midnight);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .article-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 8px;
+    }
+
+    .article-tag {
+      color: var(--otm-purple);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    
+    footer { position: relative; z-index: 3; padding-bottom: 40px; width: 100%; text-align: center; } 
+.footer-pill {
+  max-width: 450px; margin: 0 auto 20px; display: flex; justify-content: center; align-items: center; gap: 20px; padding: 10px 20px; border-radius: 100px;
+  background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+.footer-pill-links { display: flex; gap: 20px; align-items: center; }
+.footer-pill-links a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600; }
+.footer-disclaimers { width: 100%; font-size: 11.5px; color: #777; line-height: 1.6; }
+.footer-disclaimers p { margin-bottom: 6px; }
+.footer-disclaimers a { color: var(--text-muted); text-decoration: underline; }
+
+.otm-spacer-divider { padding: 40px 0; display: flex; align-items: center; justify-content: center; width: 100%; }
+.otm-spacer-line { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #cbd5e1 20%, #cbd5e1 80%, transparent); opacity: 0.4; }
+
+    
+  </style>
 </head>
 <body>
-  <h1>It Works!</h1>
-  <p>This is a simple test page to confirm your web server or browser setup is working correctly.</p>
+
+  <div class="wrapper">
+
+    <!-- Profile Header -->
+    <header class="profile-header">
+      <div class="avatar-wrap">
+        <img src="https://www.bariabder.com/bariabder.jpg" alt="Bari Abder Avatar">
+      </div>
+      <h1 class="profile-name">Bari Abder</h1>
+   
+      <p class="profile-bio">كنعاون الخبراء و رواد الأعمال يبنيو براند شخصية 
+        <br>
+        كتخلي الناس تثق فيك وتشري منك
+</p>
+      
+      <div class="cta-group">
+        <a href="https://www.bariabder.com/#final-form" class="btn btn-primary">انضم للبرنامج</a>
+        <a href="https://www.bariabder.com/#final-form" class="btn btn-secondary">احجز استشارة</a>
+      </div>
+    </header>
+
+    <!-- Main Offer / Hero Card -->
+    <div class="banner-card">
+      <img class="banner-img" src="banner.jpg" alt="Organic Trust Machine Banner">
+      <div class="banner-footer">
+        <span class="banner-title">نظام Organic Trust Machine (OTM)</span>
+        <a href="#" class="banner-link">اكتشف التفاصيل ↖</a>
+      </div>
+    </div>
+
+    <!-- Post List Section -->
+    <section class="articles-list">
+
+      <a href="#" class="article-item">
+        <img class="article-thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&q=80" alt="Article Thumbnail">
+        <div class="article-info">
+          <h3 class="article-title">الدليل الشامل: كيفاش تحول الخبرة ديالك لـ Personal Brand كتجيب المبيعات</h3>
+          <div class="article-meta">
+            <span class="article-tag">Personal Brand</span>
+            <span>•</span>
+            <span>22 يوليو 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-item">
+        <img class="article-thumb" src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&w=200&q=80" alt="Article Thumbnail">
+        <div class="article-info">
+          <h3 class="article-title">علاش القصص والشخصية في Short-Form Content أهم بكتير من Visual Effects</h3>
+          <div class="article-meta">
+            <span class="article-tag">صناعة المحتوى</span>
+            <span>•</span>
+            <span>18 يوليو 2026</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-item">
+        <img class="article-thumb" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=200&q=80" alt="Article Thumbnail">
+        <div class="article-info">
+          <h3 class="article-title">كيفاش تبني عرض قيمة (High-Ticket Offer) بلا ما تدخل في حرب الأسعار</h3>
+          <div class="article-meta">
+            <span class="article-tag">بيزنس وصبيطاج</span>
+            <span>•</span>
+            <span>10 يوليو 2026</span>
+          </div>
+        </div>
+      </a>
+
+    </section>
+
+    <!-- Simple Footer -->
+ 
+
+  </div>
+
+
+      <footer>
+        <div class="footer-pill">
+          <a href="/" aria-label="Home"><img src="main-logo.svg" style="width:32px;" alt="Logo"></a>
+          <nav class="footer-pill-links">
+            <a href="/privacy">سياسة الخصوصية</a>
+            <a href="/Terms-of-Service">شروط الخدمة</a>
+          </nav>
+        </div>
+        <div class="footer-disclaimers">
+         
+          <p>للاستفسارات والتواصل: <a href="mailto:support@bariabder.com">support@bariabder.com</a></p>
+        </div>
+      </footer>
+  
 </body>
 </html>
