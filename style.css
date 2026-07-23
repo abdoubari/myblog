@@ -28,6 +28,7 @@
   --shadow-card: 0 10px 28px rgba(0, 0, 0, 0.05);
 }
 
+
 /* Matched Dark Theme Palette (From Reference CSS) */
 [data-theme="dark"] {
   --bg-primary: #22242B;
@@ -664,4 +665,83 @@ body {
 .article-list-card:hover .article-list-arrow {
   color: var(--accent-purple);
   transform: translateX(-4px);
+}
+/* --- Custom Toast Notification --- */
+.toast-popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  padding: 14px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  overflow: hidden;
+  min-width: 280px;
+}
+
+.toast-popup.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast-icon {
+  background: var(--accent-soft);
+  color: var(--accent-purple);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.toast-message {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--accent-purple);
+  transform-origin: right;
+  transform: scaleX(0);
+}
+
+.toast-popup.show .toast-progress {
+  animation: toastTimer 3s linear forwards;
+}
+
+@keyframes toastTimer {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+html {
+  scroll-behavior: smooth;
 }
