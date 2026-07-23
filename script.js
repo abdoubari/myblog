@@ -1,6 +1,10 @@
 // Element References
 const themeToggleBtn = document.getElementById('themeToggle');
 const newsletterForm = document.getElementById('newsletterForm');
+const toastPopup = document.getElementById('toastPopup');
+
+
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx3UoKLgnSJcZ_Z4OMuRSLAG0bpjDcmTm2MIAN5AMYx9SOKiCBx_gQezfb4nt3CM9o/exec';
 
 /**
  * Applies or removes the dark theme attribute.
@@ -36,6 +40,20 @@ function initTheme() {
   }
 }
 
+/**
+ * Displays the toast popup message and automatically hides it.
+ */
+function showToast() {
+  if (!toastPopup) return;
+  
+  toastPopup.classList.add('show');
+  
+  // Hide toast after 3 seconds (matches CSS animation)
+  setTimeout(() => {
+    toastPopup.classList.remove('show');
+  }, 3000);
+}
+
 // Event Listener: Manual Theme Toggle
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener('click', () => {
@@ -54,14 +72,38 @@ window.addEventListener('storage', (event) => {
   }
 });
 
-// Event Listener: Newsletter Submission
+// Event Listener: Newsletter Submission to Google Sheets
 if (newsletterForm) {
-  newsletterForm.addEventListener('submit', function (e) {
+  newsletterForm.addEventListener('submit', async function (e) {
     e.preventDefault();
-    alert('شكراً لاشتراكك! سيصلك جديدنا على البريد.');
-    this.reset();
+
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerText;
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'جاري إرسال...';
+
+    const formData = new FormData(this);
+
+    try {
+      // Send data to Google Apps Script
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Prevents CORS preflight blocking
+      });
+
+      // Show toast notification & clear form
+      showToast();
+      this.reset();
+    } catch (error) {
+      console.error('Submission Error:', error);
+      alert('حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerText = originalText;
+    }
   });
 }
 
-// Initialize on execution
+// Initialize theme on execution
 initTheme();
