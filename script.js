@@ -4,7 +4,7 @@ const newsletterForm = document.getElementById('newsletterForm');
 const toastPopup = document.getElementById('toastPopup');
 
 
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx3UoKLgnSJcZ_Z4OMuRSLAG0bpjDcmTm2MIAN5AMYx9SOKiCBx_gQezfb4nt3CM9o/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwDfXHetzqt7XquXF5IHR3nkaQCXfhkZucB-achtIUJErgonKvQRYfpARaum8jV8c7k/exec';
 
 /**
  * Applies or removes the dark theme attribute.
