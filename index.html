@@ -3,118 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bari Abder — البراند الشخصي والأفكار</title>
+  <title>Bari Abder — المدونة</title>
   <link rel="icon" type="image/png" href="main-logo.png">
-  <!-- Cairo Font -->
+
+  <!-- Typography: Apple SF Arabic / Cairo + Playfair Display for footer slogan -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
   
-  <!-- Shared Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Custom Popup Notification -->
-<div id="toastPopup" class="toast-popup">
-  <div class="toast-content">
-    <span class="toast-icon">✓</span>
-    <span class="toast-message">شكراً لاشتراكك! سيصلك جديدنا على البريد.</span>
-  </div>
-  <div class="toast-progress"></div>
-</div>
-  <!-- Top Navigation Bar -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="https://bariabder.com/" class="brand-logo">
-        <img src="https://www.bariabder.com/bariabder.jpg" alt="Bari Abder" class="brand-avatar">
-        <span class="brand-name">Bari Abder</span>
+
+  <!-- ================= FLOATING NAVIGATION PILL ================= -->
+  <header class="top-nav-header">
+    <nav class="top-nav-pill">
+      <!-- Brand Icon / Logo -->
+       <a href="/" class="nav-profile">
+        <img src="logo-wide.png" alt="logo-otm">
       </a>
-      <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-        <a href="#subscribe" class="btn-nav-subscribe">اشترك</a>
-      </div>
-    </div>
+
+      <!-- Navigation Links -->
+      <a href="https://blog.bariabder.com/" class="nav-link-item active">المدونة</a>
+      <a href="https://bariabder.com/generator/" class="nav-link-item">أداة توليد الأفكار</a>
+
+      <!-- CTA Button Replacement -->
+      <a href="https://bariabder.com/#system" class="nav-btn-cta">تعرف على النظام</a>
+    </nav>
   </header>
 
-  <!-- Main Container -->
-  <main class="article-container">
+  <!-- ================= EDITORIAL CONTENT CONTAINER ================= -->
+  <main class="container">
+    
+    <!-- Minimal Header -->
+    <header class="blog-hero">
+      <h1 class="blog-main-title">مقالات شخصية من باري</h1>
+      <p class="blog-subtitle">كتابات وأفكار حقيقية 100% بدون AI </p>
+    </header>
 
-    <!-- Hero / Profile Header Section -->
-    <section class="profile-header">
-      <div class="avatar-wrap">
-        <img src="https://www.bariabder.com/bariabder.jpg" alt="Bari Abder Avatar">
-      </div>
-      <h1 class="profile-name">Bari Abder</h1>
-      <p class="profile-bio">
-        كنعاون الخبراء و رواد الأعمال يبنيو براند شخصية كتخلي الناس تثق فيك وتشري منك
-      </p>
+    <!-- Articles Feed -->
+    <section class="articles-feed">
       
-      <div class="cta-group">
-        <a href="https://www.bariabder.com" class="btn btn-primary">انضم للبرنامج</a>
-        <a href="https://www.bariabder.com/consultation/" class="btn btn-secondary">احجز استشارة</a>
-      </div>
-    </section>
-
-   
-
-    <!-- Article Directory List -->
-    <section class="index-articles-section">
-      <h2 class="section-label">أحدث المقالات والاستراتيجيات</h2>
-      
-      <div class="articles-list-stack">
-
-        <!-- Article 1 (Target Article) -->
-        <a href="build-personal-brand-without-competing-on-price.html" class="article-list-card">
-          <div class="article-list-info">
-            <div class="article-meta-tags">
-              <span class="tag-badge">استراتيجية البراند</span>
-              <span class="meta-dot">•</span>
-              <span class="article-list-date">23 يوليو 2026</span>
-            </div>
-            <h3 class="article-list-title">كيف تبني براند شخصي لا ينافس على السعر</h3>
-            <p class="article-list-excerpt">لديك خيارين مشهورين لكي تبني براند شخصي قوي لتبيع خدماتك... والجواب أن كلا الخيارين غلط!</p>
+      <!-- Article Entry -->
+      <article class="article-entry">
+        <a href="build-personal-brand-without-competing-on-price.html" class="article-link-wrapper">
+          <div class="article-meta-row">
+           
+            <span class="meta-separator">•</span>
+            <time class="article-date">15 غشت 2026</time>
           </div>
-          <div class="article-list-arrow">←</div>
+          
+          <h2 class="article-title">كيفاش تبني براند شخصي لا ينافس على السعر</h2>
+          <p class="article-description">عندك زوج إختيارات مشهورين لبناء حضور قوي لبيع الخدمات ديالك,  ولكن الاعتماد عليهما وحدهما يضعك دائماً في فخ مقارنة الأسعار. إليك البديل الاستراتيجي.</p>
+          
+          <div class="article-read-more">
+            <span>اقرأ المقال الكامل</span>
+            <span class="arrow-icon">←</span>
+          </div>
         </a>
+      </article>
 
-     
-      </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section" id="subscribe">
-      <div class="newsletter-box">
-        <h3 class="newsletter-title">آخر منشوراتنا.</h3>
-        <p class="newsletter-subtitle">مباشرة إلى بريدك الإلكتروني.</p>
-        <form class="newsletter-form" id="newsletterForm">
-          <input type="email" name="email" placeholder="البريد الإلكتروني" required class="newsletter-input">
-          <button type="submit" class="btn-submit">اشترك ←</button>
-        </form>
-      </div>
+    <!-- Clean Newsletter Box -->
+    <section class="newsletter-card" id="subscribe">
+      <h3 class="newsletter-headline">انضم للنشرة الخاصة</h3><br>
+       <!--   <p class="newsletter-subline">أفكار واستراتيجيات مركزة بدون حشو، مباشرة في بريدك.</p>
+-->
+      
+      <form class="newsletter-form-inline" id="newsletterForm">
+        <input type="email" name="email" placeholder="بريدك الإلكتروني..." required class="newsletter-input-field">
+        <button type="submit" class="newsletter-btn">اشتراك</button>
+      </form>
     </section>
 
   </main>
 
-  <!-- Floating Pill Footer -->
+  <!-- ================= SITE FOOTER ================= -->
   <footer class="site-footer">
-    <div class="footer-pill">
-      <a href="/" aria-label="Home"><img src="main-logo.svg" style="width:28px;" alt="Logo" onerror="this.src='main-logo.png'"></a>
-      <nav class="footer-pill-links">
-        <a href="/privacy">سياسة الخصوصية</a>
-        <a href="/terms">شروط الخدمة</a>
-      </nav>
-    </div>
-    <div class="footer-disclaimers">
-      <p>للاستفسارات والتواصل: <a href="mailto:support@bariabder.com">support@bariabder.com</a></p>
-      <p>© 2026 Bari Abder. جميع الحقوق محفوظة.</p>
+    <div class="footer-container">
+      
+      <!-- Top Row: Socials & Italic Slogan -->
+      <div class="footer-top-row">
+        <div class="footer-socials">
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <!-- YouTube -->
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+          <!-- X / Twitter -->
+          <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+              <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-slogan">
+          Become the brand people choose.
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <!-- Middle Row: Legal & Disclaimer -->
+      <p class="footer-disclaimer">
+        هذا الموقع مستقل وغير تابع أو مدعوم من شركة Meta Platforms, Inc. علامتي Facebook و Instagram هما ملكية مسجلة لشركة Meta. النتائج المعروضة ليست نموذجية وتختلف من شخص لآخر حسب التطبيق والالتزام والاستراتيجية. لا نضمن أرباحاً مالية محددة.
+      </p>
+
+      <!-- Bottom Row: Contact/Links & Copyright -->
+      <div class="footer-bottom-row">
+        <div class="footer-contact-legal">
+          <a href="mailto:support@bariabder.com" class="footer-email">support@bariabder.com</a>
+          <span class="dot-sep">•</span>
+          <a href="/terms">شروط الخدمة</a>
+          <span class="dot-sep">•</span>
+          <a href="/privacy">سياسة الخصوصية</a>
+        </div>
+
+        <div class="footer-copy">
+          © 2026 OTM System™ by Bari Abder. جميع الحقوق محفوظة.
+        </div>
+      </div>
+
     </div>
   </footer>
 
-<script src="script.js?v=2"></script>
-  
+  <script src="script.js?v=2"></script>
 </body>
 </html>
