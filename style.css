@@ -63,6 +63,17 @@ body {
   z-index: 100;
   padding: 0 1rem;
 }
+.nav-profile {
+  display: flex;
+  align-items: center;
+}
+
+.nav-profile img {
+  height: 28px;      /* Adjust height to fit your navbar */
+  width: auto;       /* Maintains aspect ratio */
+  display: block;
+  object-fit: contain;
+}
 
 .top-nav-pill {
   background: rgba(255, 255, 255, 0.88);
