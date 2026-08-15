@@ -300,6 +300,7 @@ body {
 .newsletter-btn:hover {
   background: var(--accent-hover);
 }
+
 /* =========================================================
    4. SITE FOOTER (PIXEL-PERFECT TO SCREENSHOT)
    ========================================================= */
@@ -429,32 +430,23 @@ body {
     text-align: center;
   }
 }
+
+/* Navigation Logo */
 .nav-profile {
   display: flex;
   align-items: center;
 }
 
 .nav-profile img {
-  height: 28px;      /* Adjust height to fit your navbar */
-  width: auto;       /* Maintains aspect ratio */
-  display: block;
-  object-fit: contain;
-}
-/* =========================================================
-   6. ARTICLE & BLOG POST DETAILS (ADDITIONS)
-   ========================================================= */
-.nav-profile {
-  display: flex;
-  align-items: center;
-}
-
-.nav-profile img {
-  height: 28px;
+  height: 20px;
   width: auto;
   display: block;
   object-fit: contain;
 }
 
+/* =========================================================
+   6. ARTICLE & BLOG POST DETAILS (ADDITIONS)
+   ========================================================= */
 /* Article Header */
 .article-header {
   display: flex;
@@ -617,3 +609,6 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- Removed the “new block” you added that redefined article styles ---- */
+/* (Everything you added below “/ * Navigation Logo * /” in your message was removed.) */
